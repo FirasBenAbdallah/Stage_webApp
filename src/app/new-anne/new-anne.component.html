@@ -1,0 +1,11 @@
+<!-- new-annee.component.html -->
+<h1>Create new Annee</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <label for="annee">Annee:</label>
+  <input type="text" id="annee" name="annee" [(ngModel)]="formData.annee" />
+
+  <button type="submit" class="btn">Save</button>
+</form>
+
+<a [routerLink]="['/index']">back to list</a>

@@ -1,0 +1,32 @@
+<!-- index-projet.component.html -->
+<h1>liste des projet</h1>
+
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Annee</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let projet of projets">
+      <td>{{ projet.id }}</td>
+      <td>{{ projet.nom }}</td>
+      <td>{{ projet.annee.anneeScolaire }}</td>
+      <td>
+        <a [routerLink]="[]" class="btn" (click)="fetchProjetById(projet.id)">show</a
+        ><!--(click)="fetchAnneeById(annee.id)" (click)="deleteAnnee(annee.id)"-->
+        <!--a [routerLink]="['/annee', projet.id, 'edit']" class="btn">edit</a-->
+        <a [routerLink]="[]" class="btn" (click)="deleteProjet(projet.id)">delete</a>
+      </td>
+    </tr>
+    <tr *ngIf="projets.length === 0">
+      <td colspan="3">no records found</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<p id="show"></p>
+<a [routerLink]="['/newProjet']">Create new</a>

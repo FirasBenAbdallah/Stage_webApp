@@ -1,0 +1,30 @@
+<!-- index-annee.component.html -->
+<h1>Annee index</h1>
+
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>AnneeScolaire</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let annee of annees">
+      <td>{{ annee.id }}</td>
+      <td>{{ annee.anneeScolaire }}</td>
+      <td>
+        <a [routerLink]="[]" class="btn" (click)="fetchAnneeById(annee.id)">show</a>
+        <!--a [routerLink]="['/annee', annee.id, 'edit']" class="btn">edit</a-->
+        <a [routerLink]="[]" class="btn" (click)="deleteAnnee(annee.id)">delete</a>
+      </td>
+    </tr>
+    <tr *ngIf="annees.length === 0">
+      <td colspan="3">no records found</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<p id="show"></p>
+<a [routerLink]="['/new']">Create new</a>
+

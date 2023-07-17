@@ -1,0 +1,19 @@
+<!-- new-projet.component.html -->
+<h1>Create new Annee</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <label for="nom">Nom:</label>
+  <input type="text" id="nom" name="nom" [(ngModel)]="formData.nom" />
+  <br />
+  <label for="anneeId">Annee:</label>
+  <input
+    type="text"
+    id="anneeId"
+    name="anneeId"
+    [(ngModel)]="formData.anneeId"
+  />
+  <br />
+  <button type="submit" class="btn">Save</button>
+</form>
+
+<a [routerLink]="['/projet']">back to list</a>
