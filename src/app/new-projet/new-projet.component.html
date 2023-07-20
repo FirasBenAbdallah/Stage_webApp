@@ -6,12 +6,15 @@
   <input type="text" id="nom" name="nom" [(ngModel)]="formData.nom" />
   <br />
   <label for="anneeId">Annee:</label>
-  <input
+  <!--input
     type="text"
     id="anneeId"
     name="anneeId"
     [(ngModel)]="formData.anneeId"
-  />
+  /-->
+  <select id="anneeId" name="anneeId" [(ngModel)]="formData.anneeId">
+    <option *ngFor="let annee of anneeOptions" [value]="annee.id">{{ annee.anneeScolaire }}</option>
+  </select>
   <br />
   <button type="submit" class="btn">Save</button>
 </form>
